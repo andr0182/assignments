@@ -6,13 +6,11 @@ $sql = $db->query('
 	SELECT id, movie_title, release_date, director
 	FROM movies
 	ORDER BY movie_title ASC
-
 ');
 
 $results = $sql->fetchAll();
 
 ?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -21,7 +19,6 @@ $results = $sql->fetchAll();
 </head>
 
 <body>
-
 	<?php foreach ($results as $movie) : ?>
 	
 	<h2>
@@ -36,7 +33,5 @@ $results = $sql->fetchAll();
 		<dd><?php echo $movie['director']; ?></dd>
 	</dl>
 	<?php endforeach; ?>
-
-
 </body>
 </html>

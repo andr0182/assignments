@@ -13,7 +13,6 @@ $sql = $db->prepare('
 
 $sql->bindValue(':id', $id, PDO::PARAM_INT);
 $sql->execute();
-//var_dump($db->errorInfo());
 $results = $sql->fetch();
 
 ?><!DOCTYPE HTML>
@@ -24,7 +23,6 @@ $results = $sql->fetch();
 </head>
 
 <body>
-
 	<h1><?php echo $results['movie_title']; ?></h1>
 	<dl>
 		<dt>Release Date: </dt>
@@ -33,7 +31,6 @@ $results = $sql->fetch();
 		<dd><?php echo $results['director']; ?></dd>
 	</dl>
 	
-	<a href="delete.php?id=<?php echo $id; ?>">Delete</a>
-
+	<a href="delete.php?id=<?php echo $id; ?>">Delete This Entry</a>
 </body>
 </html>
