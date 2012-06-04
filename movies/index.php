@@ -16,7 +16,10 @@ $results = $sql->fetchAll();
 <head>
 	<meta charset="utf-8">
 	<title>Movies</title>
+	<link href="css/general.css" rel="stylesheet">
 </head>
+
+<h1>My Favourite Movies & Crazy Colours Too!</h1>
 
 <body>
 	<?php foreach ($results as $movie) : ?>
