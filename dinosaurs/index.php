@@ -25,6 +25,8 @@ $results = $sql->fetchAll();
 </head>
 
 <body>
+	<a href="add.php">Add a Dinosaur</a>
+	
 		<!--We loop through the list and bring out dino-->
 	<?php foreach ($results as $dino) : ?>
 	
