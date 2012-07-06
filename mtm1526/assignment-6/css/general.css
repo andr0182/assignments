@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	background-color: #999999;
+	/*background-color: #ccc;
+	font: normal 100%/1.5 sans-serif;*/
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 39em;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+nav li {
+	display: inline;
+}
+
+nav a,
+nav  a:link,
+nav a:visited {
+	display: inline-block;
+	border-radius: 4px 4px 0 0;
+	background-color: #e2e2e2;
+	padding: 0.5em 1em;
+	text-decoration: none;
+	color: #000;
+}
+
+nav .current a,
+nav .current a:link,
+nav .current a:visited {
+	background-color: #fff;
+}
+
+article {
+	background-color: #fff;
+	padding: 1em;
+	height: 36em;
+}
+
+article div {
+	text-align: center;
+}
