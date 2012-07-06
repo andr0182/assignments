@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>js-form-validation</title>
+	<link href="css/general.css" rel = "stylesheet"
+</head>
+
+<body>
+
+	<form>
+		<div>
+			<label for="username">Username</label>
+			<input id="username" name="username" required>
+			<strong class="user-available" data-status="unchecked">
+				Available
+			</strong>
+				<!--In html5 we can make up our own attriburtes as long as they start with data-
+			data-status is a made up attribut-->
+		</div>
+		
+		<div>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<strong>Password requirements</strong>
+			<ul class="pass-req">
+				<li class="pass-length">At least 6 characters</li>
+				<li class="pass-lower">1 lowercase letter</li>
+				<li class="pass-upper">1 uppercase letter</li>
+				<li class="pass-num">1 number</li>
+				<li class="pass-symbol">1 symbol</li>
+			</ul>
+		</div>
+		
+		<div>
+			<label for="email">Email</label>
+			<input id="email" name="email" required>
+			<strong class="email-available" data-status="unchecked">
+				Available
+			</strong>
+		</div>
+		
+		<div>
+			<label for="city">City</label>
+			<input id="city" name="city" required>
+			<strong class="city-valid" data-status="invalid">
+				Enter a valid city name
+				</strong>
+		</div>
+		
+		<div>
+			<label for="country">Country</label><br>
+			<input type="radio" id="canada" name="canada" value="Canada"> Canada<br>
+			<input type="radio" id="canada" name="usa" value="USA"> USA<br>
+			data-status="unchecked"
+		</div>
+		
+		
+			
+		<button type="submit">Submit</button>
+	</form>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/form-validation.js"></script>
+
+</body>
+</html>
