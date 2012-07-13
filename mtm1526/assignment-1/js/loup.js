@@ -3,9 +3,9 @@ var timberLoup = function() {
 	
 	while (!character) {
 		character = prompt('Please type a character');
-		document.write(character);
-	}
-	
+		for(var i=0; i<10; i++)
+		document.write(character, '<br>');
+		}
 };
-	//Please clarify what this is doing? 
+
 timberLoup ();
