@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+	background-color: #fff;
+}
+
+body {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+	background-color: #999999;
+}
+
+#myform {
+	text-align: center;
+	font-size: 2em;
+}
+
+#apply {
+	width: 8em;
+	margin-top: 2em;
+}
+
+#circle {
+	height: 4.5em;
+	width: 4.5em;
+	border-radius: 4.5em;
+	margin: 0 auto;
+	margin-top: 5%;
+	background-color: #33ff33;
+	color: #ff3333;
+	border: solid;
+	border-width: 0.25em;
+	border-color: #3300ff;
+	font-size: 3.2em;
+	font-weight: bold;
+	line-height: 4em;
+	text-align: center;
+}
+
+#hide {
+	width: 10em;
+	margin: 0 auto;
+	padding-top: 3em;
+	padding-left: 2em;
+}

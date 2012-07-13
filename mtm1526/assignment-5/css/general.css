@@ -17,6 +17,9 @@ body {
 #fieldwidth {
 	max-width: 15em;
 }
+#countrybox {
+	width: 8em;
+}
 
 .user-available {
 	font-size: 1.125em;

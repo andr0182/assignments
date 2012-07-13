@@ -1,19 +1,6 @@
-
-
 <?php
-
-require_once 'includes/users.php';
-
-$_SESSION['referrer'] = $_SERVER['REQUEST_URI'];	//stored in the sesion variable
-
-if (!user_is_signed_in()) {
-	header('Location: sign-in.php');
-	exit;
-}
-
-require_once 'includes/db.php';
 $errors = array();
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
 $dino_name = filter_input(INPUT_POST, 'dino_name', FILTER_SANITIZE_STRING);
 $loves_meat = filter_input(INPUT_POST, 'loves_meat', FILTER_SANITIZE_NUMBER_INT);
 $in_jurassic_park = (isset($_POST['in_jurassic_park'])) ? 1 :0;
@@ -26,39 +13,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$errors['loves_meat']=true;
 	}
 	if(empty($errors)) {
-		//require_once 'includes/db.php';	Taken out because we only need it once and we have addet it below.
+		require_once '../dinosaurs/includes/db.php';
 		//do DB stuff
 		$sql = $db->prepare('
-			UPDATE dinosaurs
-			SET dino_name = :dino_name
-				, loves_meat = :loves_meat
-				, in_jurassic_park = :in_jurassic_park
-			WHERE id = :id
+		INSERT INTO dinosaurs (dino_name, loves_meat, in_jurassic_park)
+		VALUES (:dino_name, :loves_meat, :in_jurassic_park)
 		');
-		$sql->bindValue(':id', $id, PDO::PARAM_INT);
 		$sql->bindValue(':dino_name', $dino_name, PDO::PARAM_STR);
-		$sql->bindValue(':loves_meat', $loves_meat, PDO::PARAM_INT);
-		$sql->bindValue(':in_jurassic_park', $in_jurassic_park, PDO::PARAM_INT);
+		$sql->bindValue(':loves_meat', $loves_meat, PDO::PARAM_STR);
+		$sql->bindValue(':in_jurassic_park', $in_jurassic_park, PDO::PARAM_STR);
 		$sql->execute();
 //var_dump($sql->errorInfo());
 		header('location: index.php');
 		exit;
 	}
-} else {
-	//require_once 'includes/db.php';
-	$sql = $db->prepare('
-	SELECT dino_name, loves_meat, in_jurassic_park
-	FROM dinosaurs
-	WHERE id = :id
-	');
-	$sql->bindValue(':id', $id, PDO::PARAM_INT);
-	$sql->execute();
-	$results = $sql->fetch();
-	
-	$dino_name = $results['dino_name'];
-	$loves_meat = $results['loves_meat'];
-	$in_jurassic_park = $results['in_jurassic_park'];
-	
 }
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -69,8 +37,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-	<h1>Edit Dinosaur</h1> 
-    <form method="post" action="edit.php?id=<?php echo $id; ?>">
+	<h1>Add New Dinosaur</h1> 
+    <form method="post" action="../dinosaurs/add.php">
     	<div>
         	<label for="dino_name">
             	Dinosaur Name
@@ -102,7 +70,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
            <label for="in_jurassic_park">In_jurassic_park?</label>
         </div>
-        <button type="submit">Save</button>
+        <button type="submit">Add</button>
         
         </form>
     

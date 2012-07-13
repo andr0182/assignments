@@ -96,10 +96,6 @@ $(document).ready(function() {
 	$('#city').on('change', function() {  //Thomas, why is ".on('keyup', function()" better.
 		var city = $(this).val();
 		
-		//if (city.match(/[^'~!@#$%^&*()+={}[]|":;?<>0-9]/)) {		//Thomas I would like to know if this would work?
-			//var ajax = $.post('city.php', {	//Post this to the database?
-				//'city' : city			//This casts 'city' variable in js to ": city" variable in sql.  Thomas I want to load city to the database?
-		
 		if (city.match(/['~!@#$%^&*()+={}[]|":;?<>0-9]/)) {			//This could also be "if (city.match(/[a-zA-Z]/))?"
 			$('.city-invalid').attr('data-status', 'not-a-city')	
 			.html('Please enter a valid city name');
@@ -107,7 +103,7 @@ $(document).ready(function() {
 	});
 	
 	$('#canada').on('click', function () {
-		$('#countrybox').load('canada.html');		//Where do I load this to.  Can I load it to the current page. Also, how do I load this info with ajax? To database?
+		$('#countrybox').load('canada.html');
 	});
 	
 	$('#usa').on('click', function () {

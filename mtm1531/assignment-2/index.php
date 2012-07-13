@@ -1,5 +1,4 @@
-
-<!--
+<?php
 $num1 = 0;
 $num2 = 0;
 $func = '+';
@@ -33,9 +32,9 @@ switch ($func) {
 	break;
 }
 
-$total = $answer * 1.13;
--->
+$total = $answer //* 1.13;
 
+?>
 
 <!DOCTYPE HTML>
 <html>
