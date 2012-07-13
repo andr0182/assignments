@@ -18,4 +18,3 @@ if (empty($results)) {
 } else {
 	echo 'unavailable';
 }
-

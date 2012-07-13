@@ -13,17 +13,13 @@
 		<div>
 			<label for="username">Username</label>
 			<input id="username" name="username" required>
-			<strong class="user-available" data-status="unchecked">
-				Available
-			</strong>
-				<!--In html5 we can make up our own attriburtes as long as they start with data-
-			data-status is a made up attribut-->
+			<strong class="user-available" data-status="unchecked">Available</strong>
 		</div>
 		
 		<div>
-			<label for="password">Password</label>
-			<input type="password" id="password" name="password" required>
-			<strong>Password requirements</strong>
+			<br><label for="password">Password</label>
+			<input type="password" id="password" name="password" required><br>
+			<br><strong>Password requirements</strong>
 			<ul class="pass-req">
 				<li class="pass-length">At least 6 characters</li>
 				<li class="pass-lower">1 lowercase letter</li>
@@ -36,29 +32,26 @@
 		<div>
 			<label for="email">Email</label>
 			<input id="email" name="email" required>
-			<strong class="email-available" data-status="unchecked">
-				Available
-			</strong>
+			<strong class="user-available" data-status="unchecked">Available</strong>
 		</div>
 		
 		<div>
-			<label for="city">City</label>
+			<br><label for="city">City</label>
 			<input id="city" name="city" required>
-			<strong class="city-valid" data-status="invalid">
-				Enter a valid city name
-				</strong>
+			<strong class="city-invalid" data-status="invalid"></strong>
+			
 		</div>
 		
 		<div>
+		<br><fieldset id="fieldwidth">
 			<label for="country">Country</label><br>
-			<input type="radio" id="canada" name="canada" value="Canada"> Canada<br>
-			<input type="radio" id="canada" name="usa" value="USA"> USA<br>
-			data-status="unchecked"
+			<input type="radio" id="canada" name="canada" value="Canada"> Canada
+			<input type="radio" id="usa" name="usa" value="usa"> United States<br>
+		</fieldset>
 		</div>
 		
 		
-			
-		<button type="submit">Submit</button>
+		<br><button type="submit">Submit</button>
 	</form>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

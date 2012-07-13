@@ -1,25 +1,35 @@
 @charset "utf-8";
 /* CSS Document */
+html {
+	background-color: #777777;
+}
+
 body {
-	background-color:
-	padding: 0;
-	margin: 0;
-	width: 50%;
+	width: 80%;
+	max-width: 16em;
+	margin: 0 auto;
+	margin-top: 5%;
+	padding: 4%;
+	height: 40%;
+	border: solid;
+}
+
+#fieldwidth {
+	max-width: 15em;
 }
 
 .user-available {
 	font-size: 1.125em;
 }
 .user-available:before {
-	
 	content: "✔";
 }
 /*copypastecharacter.com*/
-/*Square brackets are an attribute selector - look it up*/
+
 .user-available[data-status="unchecked"] {
 	display: none;
 }
-	
+
 .user-available[data-status="available"] {
 	color: #090;
 }
@@ -45,4 +55,10 @@ pass-req {
 .pass-req li[data-state="achieved"]:before {
 	color: #090;
 	content: "✔";
+}
+
+.city-invalid[data-status="not-a-city"] {
+	color: #090;
+	font-size: 1.125em;
+	/*content: "✖";*/
 }
