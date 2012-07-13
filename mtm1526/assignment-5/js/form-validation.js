@@ -107,11 +107,11 @@ $(document).ready(function() {
 	});
 	
 	$('#canada').on('click', function () {
-		$('#countryhere').load('canada.html');		//Where do I load this to.  Can I load it to the current page. Also, how do I load this info with ajax? To database?
+		$('#countrybox').load('canada.html');		//Where do I load this to.  Can I load it to the current page. Also, how do I load this info with ajax? To database?
 	});
 	
 	$('#usa').on('click', function () {
-		$('').load('usa.html');
+		$('#countrybox').load('usa.html');
 	});
 
 	$('form').on('submit', function (ev) {
